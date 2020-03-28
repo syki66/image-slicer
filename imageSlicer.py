@@ -1,19 +1,23 @@
 from PIL import Image
 
-img = Image.open('suvin.png')
+fileName = "suvin.png"
 
-pic_size = img.size[1]
+img = Image.open(fileName)
 
-last_pic = pic_size % 3000
+pic_width, pic_height = img.size
+
+print(pic_width)
+
+last_pic = pic_height % 3000
 
 i = 0
 
-while(pic_size / 3000 >i+1):
-    box = (0,(3000*i)+i,758,(3000*i)+i+3000)
+while(pic_height / 3000 >i+1):
+    box = (0,(3000*i)+i,pic_width,(3000*i)+i+3000)
     img2 = img.crop(box)
-    img2.save('상세페이지 수정본'+str(i+1)+'.png')
+    img2.save(fileName.split(".")[0]+str(i+1)+'.'+ fileName.split(".")[1])
     i+=1
 
-box = (0,(3000*i)+i,758,(3000*i)+i+last_pic)
+box = (0,(3000*i)+i,pic_width,(3000*i)+i+last_pic)
 img2 = img.crop(box)
-img2.save('상세페이지 수정본'+str(i+1)+'.png')
+img2.save(fileName.split(".")[0]+str(i+1)+'.'+fileName.split(".")[1])
