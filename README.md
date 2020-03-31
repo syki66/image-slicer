@@ -1,4 +1,4 @@
-# image-slicer-in-wemakeprice
+# image-slicer
 
 위메프, 옥션 등 판매자 센터에서 상세페이지를 올릴때 이미지 높이를 제한하기 때문에, 그에 맞게 잘라주는 프로그램
 
